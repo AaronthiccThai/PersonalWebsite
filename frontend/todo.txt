@@ -1,0 +1,19 @@
+Home page
+Blog page/blogs - with comments
+contacts me 
+
+ROUTES to backend
+POST/contact
+GET/projects 
+POST/comments
+
+Pages:
+Home page
+About me page
+Blog page/ post page
+Contact me page
+
+Components:
+Header 
+Footer
+Layout

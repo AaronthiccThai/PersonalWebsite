@@ -1,0 +1,8 @@
+routes:
+- contact me 
+- comments on post 
+
+MONGO DB for database 
+- comment on a post 
+- maybe reference to a post
+
