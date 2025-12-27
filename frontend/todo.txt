@@ -4,16 +4,24 @@ contacts me
 
 ROUTES to backend
 POST/contact
-GET/projects 
+GET/projects - idk abt this
 POST/comments
 
 Pages:
 Home page
 About me page
-Blog page/ post page
+Blog page/ post page/ project page
 Contact me page
 
 Components:
 Header 
 Footer
 Layout
+Error
+
+Cool features
+- Commenting
+- Filtering projects
+- search up blogs
+-   
+- testing 
