@@ -1,5 +1,7 @@
 import type React from "react"
 import { useNavigate } from "react-router-dom"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -23,7 +25,15 @@ const Header: React.FC = () => {
   return (
     <nav className="bg-[rgb(33,52,72)] dark:bg-gray-800 shadow">
       <div className="flex items-center justify-between px-12 py-4 text-white">
-        <span className="font-bold text-xl hover:text-blue-300 cursor-pointer">Aaron</span>
+        <div>
+          <span className="font-bold text-xl hover:text-blue-300 cursor-pointer">Aaron</span>
+          <FontAwesomeIcon icon={faGithub} className="px-2 hover:text-blue-300 cursor-pointer text-2xl"
+            onClick={() => window.open("https://github.com/AaronthiccThai", "_blank")}
+          />
+          <FontAwesomeIcon icon={faLinkedin} className="px-2 hover:text-blue-300 cursor-pointer text-2xl"
+            onClick={() => window.open("https://www.linkedin.com/in/aaron-thai-917536256/", "_blank")}
+          />
+        </div> 
 
         <div className="flex space-x-6">
           <a onClick={goToHome} className="hover:text-blue-300 cursor-pointer">Home</a>
