@@ -1,4 +1,5 @@
 from flask import Blueprint, request, jsonify
+from ..helpers import send_contact_email
 import re
 
 contact_bp = Blueprint('contact', __name__)
@@ -14,7 +15,7 @@ def contact():
   if not data:
     return jsonify({"error": "Invalid JSON data"}), 400
 
-  name = data.get('name')
+  name = data.get('name') 
   email = data.get('email')
   message = data.get('message')
   errors = {}
@@ -34,5 +35,9 @@ def contact():
     errors['message'] = 'Message must be at least 10 characters'
   if errors:
     return jsonify({"errors": errors}), 400
-
-  return jsonify({"message": "Contact form submitted successfully"}), 200
+  try:
+    send_contact_email(name, email, message)
+    return jsonify({"message": "Message sent successfully"}), 200
+  except Exception as e:
+    print(e)
+    return jsonify({"error": "Failed to send email"}), 500
