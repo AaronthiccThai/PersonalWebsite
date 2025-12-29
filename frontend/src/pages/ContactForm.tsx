@@ -67,7 +67,7 @@ const [errors, setErrors] = useState<FormErrors>({});
     setSubmitStatus("");
     // API CALL HERE 
     try {
-      const response = await fetch("http://localhost:5000/contact", {
+      const response = await fetch("https://personalwebsite-a8vi.onrender.com/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
