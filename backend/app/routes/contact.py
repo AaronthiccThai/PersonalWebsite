@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from ..helpers import send_contact_email
+import send_contact_email
 import re
 
 contact_bp = Blueprint('contact', __name__)
