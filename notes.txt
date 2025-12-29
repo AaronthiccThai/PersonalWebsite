@@ -1,0 +1,3 @@
+vercel - deployment for frontend
+render - deployment for backend
+sendgrid/sendlayer - email 

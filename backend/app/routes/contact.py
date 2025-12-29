@@ -1,12 +1,12 @@
 from flask import Blueprint, request, jsonify
-import send_contact_email
+from send_contact_email import send_contact_email
 import re
 
 contact_bp = Blueprint('contact', __name__)
 
 def validate_email(email):
-    email_regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
-    return re.match(email_regex, email) is not None
+  email_regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+  return re.match(email_regex, email) is not None
   
   
 @contact_bp.route('/contact', methods=['POST'])
