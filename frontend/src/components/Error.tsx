@@ -1,10 +1,15 @@
+type Error = {
+  message?: string;
+};
 
-const Error = () => {       
+const Error: React.FC<Error> = ({ message }) => {
+  if (!message) return null;
 
-  return (        
-    <div className="p-8">   
-      <h1>404 - Page Not Found</h1>  
-    </div>      
-  ) 
-}       
-export default Error
+  return (
+    <p className="text-red-500 text-sm mt-1">
+      {message}
+    </p>
+  );
+};
+
+export default Error;

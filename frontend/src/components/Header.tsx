@@ -26,7 +26,7 @@ const Header: React.FC = () => {
     <nav className="bg-[rgb(33,52,72)] dark:bg-gray-800 shadow">
       <div className="flex items-center justify-between px-12 py-4 text-white">
         <div>
-          <span className="font-bold text-xl hover:text-blue-300 cursor-pointer">Aaron</span>
+          <span className="font-bold text-xl hover:text-blue-300 cursor-pointer" onClick={goToHome}>Aaron</span>
           <FontAwesomeIcon icon={faGithub} className="px-2 hover:text-blue-300 cursor-pointer text-2xl"
             onClick={() => window.open("https://github.com/AaronthiccThai", "_blank")}
           />

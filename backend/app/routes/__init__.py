@@ -1,4 +1,3 @@
-# Register blueprints for this folder
+from .contact import contact_bp
 
-from flask import Blueprint
-
+__all__ = ["contact_bp"]

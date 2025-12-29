@@ -11,7 +11,7 @@ Pages:
 Home page
 About me page
 Blog page/ post page/ project page
-Contact me page
+Contact me page - use SendGrid after deployment
 
 Components:
 Header 
