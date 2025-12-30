@@ -8,10 +8,11 @@ const ContactForm = () => {
     email: "",
     message: ""
   });
-const [errors, setErrors] = useState<FormErrors>({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(""); 
-  
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+ 
   const validateEmail = (email: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
@@ -67,7 +68,7 @@ const [errors, setErrors] = useState<FormErrors>({});
     setSubmitStatus("");
     // API CALL HERE 
     try {
-      const response = await fetch("https://personalwebsite-a8vi.onrender.com/contact", {
+      const response = await fetch(`${API_BASE_URL}/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
