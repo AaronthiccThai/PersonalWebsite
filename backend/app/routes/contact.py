@@ -10,12 +10,21 @@ def validate_email(email):
   email_regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
   return re.match(email_regex, email) is not None
 
+# looks like a bug here
 def send_contact_email(name, email, message):
-  sg = SendGridAPIClient(os.getenv("SENDGRID_API_KEY"))
+  sender = os.getenv("FROM_EMAIL")
+  api_key = os.getenv("SENDGRID_API_KEY")
+
+  if not sender:
+      raise RuntimeError("FROM_EMAIL environment variable not set")
+  if not api_key:
+      raise RuntimeError("SENDGRID_API_KEY environment variable not set")
+
+  sg = SendGridAPIClient(api_key)
 
   mail = Mail(
-    from_email=os.getenv("SENDER_EMAIL"),
-    to_emails=os.getenv("SENDER_EMAIL"),  # send to yourself
+    from_email=sender,
+    to_emails=sender,
     subject=f"New Contact Form Message from {name}",
     html_content=f"""
       <p><strong>Name:</strong> {name}</p>
