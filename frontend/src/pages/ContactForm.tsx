@@ -92,74 +92,86 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="p-12 max-w-2xl w-full bg-white rounded-lg shadow-lg">
-      <h1 className="text-2xl mb-4">Contact Me</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className={`border rounded w-full py-2 px-3
-              ${errors.name ? "border-red-500" : "border-gray-300"}
-            `}
-          />
-          <Error message={errors.name} />
-        </div>
+    <div className="flex justify-center items-center min-h-screen relative"       
+      style={{["--bg-start" as any]: "#5babf0", ["--bg-end" as any]: "#ff6361",}}
+    >
+      <div className="area">
+        <ul className="circles">
+          {Array.from({ length: 10 }).map((_, i) => (
+            <li key={i} />
+          ))}
+        </ul>
+      </div>        
+      <div className="p-12 max-w-2xl w-full bg-white rounded-lg shadow-lg z-10">
+        <h1 className="text-2xl mb-4">Contact Me</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              className={`border rounded w-full py-2 px-3
+                ${errors.name ? "border-red-500" : "border-gray-300"}
+              `}
+            />
+            <Error message={errors.name} />
+          </div>
 
-        <div className="mb-4">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          className={`border rounded w-full py-2 px-3
-            ${errors.email ? "border-red-500" : "border-gray-300"}
-          `}
-          />
-          <Error message={errors.email} />
-        </div>
-        <div className="mb-4">
-          <label htmlFor="message">Message:</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
+          <div className="mb-4">
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
             className={`border rounded w-full py-2 px-3
-              ${errors.message ? "border-red-500" : "border-gray-300"}
+              ${errors.email ? "border-red-500" : "border-gray-300"}
             `}
-          ></textarea>
-          <Error message={errors.message} />
-        </div>
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className={`py-2 px-4 rounded text-white
-            ${isSubmitting
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-blue-500 hover:bg-blue-600"
+            />
+            <Error message={errors.email} />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="message">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              className={`border rounded w-full py-2 px-3
+                ${errors.message ? "border-red-500" : "border-gray-300"}
+              `}
+            ></textarea>
+            <Error message={errors.message} />
+          </div>
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className={`py-2 px-4 rounded text-white
+              ${isSubmitting
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-blue-500 hover:bg-blue-600"
+              }`}
+          >
+            {isSubmitting ? "Sending..." : "Submit"}
+          </button>
+        </form>
+        {submitStatus && (
+          <p className={`mt-4 text-sm
+            ${submitStatus.includes("success")
+              ? "text-green-600"
+              : "text-red-600"
             }`}
-        >
-          {isSubmitting ? "Sending..." : "Submit"}
-        </button>
-      </form>
-      {submitStatus && (
-        <p className={`mt-4 text-sm
-          ${submitStatus.includes("success")
-            ? "text-green-600"
-            : "text-red-600"
-          }`}
-        >
-          {submitStatus}
-        </p>
-      )}
+          >
+            {submitStatus}
+          </p>
+        )}
+      </div>
     </div>
+
   )
 }
 export default ContactForm

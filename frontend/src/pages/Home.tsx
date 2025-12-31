@@ -19,14 +19,23 @@ const Home: React.FC = () => {
   }, [index])
 
   return (
-    <div className="flex min-h-screen flex-col justify-center items-center">
-      <p className="font-mono text-[50px] ">
+    <div className="relative min-h-screen overflow-hidden flex flex-col justify-center items-center"
+      style={{["--bg-start" as any]: "#8f94fb", ["--bg-end" as any]: "#00ff99",}}
+    >
+      <p className="font-mono text-[50px] text-white z-10">
         {displayed}
         {index < text.length && <span className="ml-1 animate-pulse">|</span>}
       </p>
+      <div className="area">
+        <ul className="circles">
+          {Array.from({ length: 10 }).map((_, i) => (
+            <li key={i} />
+          ))}
+        </ul>
+      </div>
     </div>
-
   )
 }
 
 export default Home
+// #8f94fb, #4e54c8
