@@ -23,7 +23,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <nav className="bg-[rgb(33,52,72)] dark:bg-gray-800 shadow">
+  <nav className="bg-linear-to-r from-(--bg-start) to-(--bg-end) shadow">
       <div className="flex items-center justify-between px-12 py-4 text-white">
         <div>
           <span className="font-bold text-xl hover:text-blue-300 cursor-pointer" onClick={goToHome}>Aaron</span>
