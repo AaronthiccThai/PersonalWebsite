@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import FloatingCircles from "../components/FloatingCircles"
 
 const Home: React.FC = () => {
   const text = "Hi, I'm Aaron and this is my for fun website!"
@@ -26,13 +27,8 @@ const Home: React.FC = () => {
         {displayed}
         {index < text.length && <span className="ml-1 animate-pulse">|</span>}
       </p>
-      <div className="area">
-        <ul className="circles">
-          {Array.from({ length: 10 }).map((_, i) => (
-            <li key={i} />
-          ))}
-        </ul>
-      </div>
+      <FloatingCircles></FloatingCircles>
+
     </div>
   )
 }

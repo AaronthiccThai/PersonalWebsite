@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Error from "../components/Error";
+import FloatingCircles from "../components/FloatingCircles";
 
 type FormErrors = Record<string, string>; // [key: string]: string
 const ContactForm = () => {   
@@ -95,13 +96,8 @@ const ContactForm = () => {
     <div className="flex justify-center items-center min-h-screen relative"       
       style={{["--bg-start" as any]: "#5babf0", ["--bg-end" as any]: "#ff6361",}}
     >
-      <div className="area">
-        <ul className="circles">
-          {Array.from({ length: 10 }).map((_, i) => (
-            <li key={i} />
-          ))}
-        </ul>
-      </div>        
+      <FloatingCircles></FloatingCircles>
+        
       <div className="p-12 max-w-2xl w-full bg-white rounded-lg shadow-lg z-10">
         <h1 className="text-2xl mb-4">Contact Me</h1>
         <form onSubmit={handleSubmit}>

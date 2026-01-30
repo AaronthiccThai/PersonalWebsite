@@ -1,0 +1,10 @@
+[
+  { "name": "React", "icon": "react", "proficiency": 3 },
+  { "name": "TypeScript/Javascript", "icon": "node", "proficiency": 3 },
+  { "name": "Git", "icon": "git", "proficiency": 4 },
+  { "name": "Kotlin", "icon": "kotlin", "proficiency": 2 },
+  { "name": "Java", "icon": "java", "proficiency": 2.5 },
+  { "name": "Python", "icon": "python", "proficiency": 3.5},
+  { "name": "PostgreSQL/SQL", "icon": "postgresql", "proficiency": 3 }
+]
+  

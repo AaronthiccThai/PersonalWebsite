@@ -1,3 +1,5 @@
+import FloatingCircles from "../components/FloatingCircles"
+
 const Project = () => {   
   const projects = [
     { name: "Random Game", 
@@ -22,6 +24,18 @@ const Project = () => {
       description: "A simple boss fight game made in Java",
       tech: ["Java"],
       link: "https://github.com/AaronthiccThai/BossFightGame"
+    },
+    {
+      name: "Cordyx",
+      description: "Android App that allows daily scheduling",
+      tech: ["Android Studio", "Kotlin"],
+      link: "https://github.com/AaronthiccThai/Cordyx"
+    },
+    {
+      name: "Personal Website",
+      description: "The website you are currently on!",
+      tech: ["ReactJS", "TypeScript", "TailwindCSS"],
+      link: "https://github.com/AaronthiccThai"
     }
     
   ] // Placeholder for future project data
@@ -35,15 +49,10 @@ const Project = () => {
         These projects are mainly random projects I did to practice my skills which I prefer over doing LeetCode.
         <br></br>
         A lot of these projects were either not deployed or were really short and simple. Some were done right after doing a comp course 
-        just to practice what I learned.
+        just to practice what I learnt.
       </h1> 
-      <div className="area">
-        <ul className="circles">
-          {Array.from({ length: 10 }).map((_, i) => (
-            <li key={i} />
-          ))}
-        </ul>
-      </div>  
+      <FloatingCircles></FloatingCircles>
+  
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 "> 
           {projects.map((project, index) => (
             <div key={index} className="bg-white bg-opacity-20 backdrop-blur-lg rounded-lg p-6 shadow-lg border hover:scale-105">

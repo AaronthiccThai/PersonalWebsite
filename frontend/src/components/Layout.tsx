@@ -8,6 +8,7 @@ const themes: Record<string, { start: string; end: string }> = {
   "/about": { start: "#e9a398", end:  "#ead431" },
   "/projects": { start: "#da7bf0", end: "#e3cb9b" },
   "/contact": { start: "#ff6361", end: "#5babf0" },
+  "/tech": { start: "#C47BE4", end: "#F29AAE" },
 }
 
 const Layout = ({ children }: { children: React.ReactNode }) => {

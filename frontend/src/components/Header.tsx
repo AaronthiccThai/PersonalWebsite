@@ -22,6 +22,9 @@ const Header: React.FC = () => {
     navigate("/contact");
   };
 
+  const goToTech = () => {
+    navigate("/tech");
+  }
   return (
   <nav className="bg-linear-to-r from-(--bg-start) to-(--bg-end) shadow">
       <div className="flex items-center justify-between px-12 py-4 text-white">
@@ -38,6 +41,7 @@ const Header: React.FC = () => {
         <div className="flex space-x-6">
           <a onClick={goToHome} className="hover:text-blue-300 cursor-pointer">Home</a>
           <a onClick={goToAbout} className="hover:text-blue-300 cursor-pointer">About</a>
+          <a onClick={goToTech} className="hover:text-blue-300 cursor-pointer">Tech</a>
           <a onClick={goToProjects} className="hover:text-blue-300 cursor-pointer">Projects</a>
           <a onClick={goToContact} className="hover:text-blue-300 cursor-pointer">Contact</a>
         </div>
